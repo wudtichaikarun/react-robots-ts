@@ -1,0 +1,23 @@
+import * as React from 'react';
+
+// สามารถใช้ IRobot เหมื่อน CardList.tsx ได้แต่ลองเล่นแบบอื่นดู
+interface CardStatelessProps {
+  name: string;
+  email: string;
+  id: number;
+}
+
+// React.SFC คือ react stateless functional component
+const Card: React.SFC<CardStatelessProps> = ({ name, email, id }) => {
+  return (
+    <div className="tc grow bg-light-green br3 pa3 ma2 dib bw2 shadow-5">
+      <img alt="robots" src={`https://robohash.org/${id}?200x200`} />
+      <div>
+        <h2>{name}</h2>
+        <p>{email}</p>
+      </div>
+    </div>
+  );
+};
+
+export default Card;
